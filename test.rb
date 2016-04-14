@@ -18,7 +18,8 @@ puts
 p "Array of Bikes: #{bike_array}"
 
 p bike.report_broken
-p bike.broken?
+p station.dock(bike)
+p station.release_bike
 
 
 
