@@ -28,4 +28,9 @@ load 'bike.rb'
     expect {(DockingStation::DEFAULT_CAPACITY+1).times {subject.dock(bike)}}.to raise_error("Already at capacity")
   end
 
+  it {
+    station = DockingStation.new(30)
+    expect(station.capacity).to eq 30
+  }
+
 end
