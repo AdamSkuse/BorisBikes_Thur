@@ -14,7 +14,7 @@ class DockingStation
 	def release_bike
 		if empty?
 			fail  "No bikes to release"
-		elsif @bikes.last.broken?
+		elsif broken?
 			fail "Can not release broken bike"
 		else
 			@bikes.pop
@@ -37,6 +37,10 @@ private
 
 	def full?
 		@bikes.length == DEFAULT_CAPACITY
+	end
+
+	def broken?
+		@bikes.last.broken?
 	end
 
 end
