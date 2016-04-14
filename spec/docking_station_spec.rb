@@ -8,7 +8,6 @@ load 'bike.rb'
   it "adds a new bike" do
     bike = Bike.new
     subject.dock(bike)
-    expect(bike).to be_working
   end
 
   it "accepts a bike" do

@@ -17,8 +17,8 @@ p "Bike: #{bike}"
 puts
 p "Array of Bikes: #{bike_array}"
 
-# allows a user to set a @capacity instance variable when DockingStation.new is called
-p station
+p bike.report_broken
+p bike.broken?
 
 
 
