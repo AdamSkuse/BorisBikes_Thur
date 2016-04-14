@@ -6,12 +6,12 @@ load 'bike.rb'
   it { is_expected.to respond_to :release_bike }
 
   it "adds a new bike" do
-    bike = Bike.new
+    bike = double(:bike)
     subject.dock(bike)
   end
 
   it "accepts a bike" do
-    bike = Bike.new
+    bike = double(:bike)
     tracker = subject.bikes.length
     subject.dock(bike)
     expect(subject.bikes.length).to eq (tracker + 1)
@@ -23,14 +23,14 @@ load 'bike.rb'
   end
 
   it "raises an error when trying to release a broken bike" do
-    bike = Bike.new
+    bike = double(:bike)
     bike.report_broken
     subject.dock(bike)
     expect {subject.release_bike}.to raise_error("Can not release broken bike")
   end
 
   it "raises error when the bike rack is at overcapacity" do
-    bike = Bike.new
+    bike = double(:bike)
     expect {(DockingStation::DEFAULT_CAPACITY+1).times {subject.dock(bike)}}.to raise_error("Already at capacity")
   end
 
