@@ -33,4 +33,9 @@ load 'bike.rb'
     expect(station.capacity).to eq 30
   }
 
+  it "defaults to capacity 20 when no arg is passed during initialization" do
+  station = DockingStation.new
+  expect(station.capacity).to eq 20
+  end
+
 end
